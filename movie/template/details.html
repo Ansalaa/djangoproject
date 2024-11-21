@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-3">
+    <h2 class="text-center">Movie Details</h2></div>
+<div class="card mb-3 mx-auto " style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 p-4">
+      <img src="{{movies.cover.url}}" class="img-fluid rounded-start height=300px width=100px" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Movie Title : {{movies.title}}</h5>
+        <p class="card-text">Description : {{movies.description}}</p>
+          <p class="card-text">Language : {{movies.language}}</p>
+          <h5 class="card-text">Year : {{movies.year}}</h5>
+        <div class="d-flex justify-content-between">
+          <a href="{% url 'update' movies.id %}" class="btn btn-dark">Update</a>
+          <a href="{% url 'delete' movies.id %}" class="btn btn-dark">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
