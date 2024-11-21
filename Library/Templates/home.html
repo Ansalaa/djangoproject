@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body style="background-image:url('{% static "image/img_1.png" %}')">
+<h1 class="mt-5 px-5">Welcome to Home Page</h1>
+
+{% if user.is_authenticated %}
+<h3 class="mt-5 px-5">{{user.username}}</h3>
+{% else %}
+<h3 class="mt-5 px-5">Gust</h3>
+{% endif %}
+
+
+{% endblock %}
